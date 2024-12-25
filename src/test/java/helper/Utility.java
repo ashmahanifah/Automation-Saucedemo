@@ -1,12 +1,16 @@
 package helper;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import stepDef.ApiStep;
 
 import java.io.File;
+import java.io.InputStream;
 import java.time.Duration;
+
 
 public class Utility {
 
@@ -20,9 +24,13 @@ public class Utility {
     }
 
 
-    public static File getJSONSchemaFile(String JSONFile) {
-        return new File("src/test/Java/helper/JSONSchemaData/" + JSONFile);
+    //    public static File getJSONSchemaFile(String JSONFile) {
+//        return new File("src/test/Java/helper/JSONSchemaData/" + JSONFile);
+//    }
+    public static InputStream getJSONSchemaInputStream(String JSONFile) {
+        return ApiStep.class.getClassLoader().getResourceAsStream("helper/JSONSchemaData/" + JSONFile);
     }
+
 
     public static String generateRandomEmail() {
 
@@ -57,7 +65,6 @@ public class Utility {
             driver = null; // driver dihapus setelah ditutup
         }
     }
-
 
 
 }
