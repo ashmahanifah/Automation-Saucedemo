@@ -41,7 +41,7 @@ configurations {
 }
 
 
-tasks.register('apiTest', JavaExec) {
+tasks.register('cucumber', JavaExec) {
     dependsOn assemble, testClasses
     mainClass = "io.cucumber.core.cli.Main"
     classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
