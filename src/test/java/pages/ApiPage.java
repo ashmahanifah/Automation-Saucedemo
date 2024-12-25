@@ -6,7 +6,8 @@ import helper.Utility;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import java.io.File;
+
+import java.io.InputStream;
 import java.util.List;
 import static helper.Models.*;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -81,10 +82,16 @@ public class ApiPage {
     }
 
 
+//    public void validationResponseJsonWithJSONSchema(String filename) {
+//        File JSONFile = Utility.getJSONSchemaFile(filename);
+//        res.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(JSONFile));
+//    }
+
     public void validationResponseJsonWithJSONSchema(String filename) {
-        File JSONFile = Utility.getJSONSchemaFile(filename);
-        res.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(JSONFile));
+        InputStream schemaStream = Utility.getJSONSchemaInputStream(filename);
+        res.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schemaStream));
     }
+
 
     public void hitApiPostCreateNewUsers() {
         res = Models.postCreateUser(setURL);

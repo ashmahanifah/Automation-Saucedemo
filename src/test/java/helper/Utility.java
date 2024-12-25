@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import stepDef.ApiStep;
 
-import java.io.File;
 import java.io.InputStream;
 import java.time.Duration;
 
@@ -24,11 +23,8 @@ public class Utility {
     }
 
 
-    //    public static File getJSONSchemaFile(String JSONFile) {
-//        return new File("src/test/Java/helper/JSONSchemaData/" + JSONFile);
-//    }
     public static InputStream getJSONSchemaInputStream(String JSONFile) {
-        return ApiStep.class.getClassLoader().getResourceAsStream("helper/JSONSchemaData/" + JSONFile);
+        return ApiStep.class.getClassLoader().getResourceAsStream("JSONSchemaData/" + JSONFile);
     }
 
 
@@ -50,19 +46,16 @@ public class Utility {
         options.addArguments("--remote-allow-origins=*");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
     }
 
-//    public static void quitDriver() {
-//        driver.quit();
-//    }
 
     public static void quitDriver() {
         if (driver != null) {
             driver.quit();
-            driver = null; // driver dihapus setelah ditutup
+            driver = null;
         }
     }
 
