@@ -49,7 +49,6 @@ tasks.register('cucumber', JavaExec) {
             '--plugin', 'pretty',
             '--plugin', 'html:reports/cucumber-report.html',
             '--glue', 'stepDef',
-            '--tags', '@api and @web',
             'src/test/java/feature'
 
     ]

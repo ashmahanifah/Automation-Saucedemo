@@ -8,12 +8,10 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty"},
         glue = {"stepDef"},
-        features = {"src/test/java/feature"},
-        tags = "@api and @web",
-        monochrome = true
+        features = {"src/test/java/feature"}
 
 )
 
-public class ApiRunner {
+public class TestRunner {
 
 }
