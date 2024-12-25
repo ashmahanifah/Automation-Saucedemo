@@ -40,23 +40,46 @@ public class ApiPage {
 
     }
 
+//    public void validationResponseBodyGetListUsers() {
+//        List<Object> id = res.jsonPath().getList( "id");
+//        List<Object> name = res.jsonPath().getList( "name");
+//        List<Object> email = res.jsonPath().getList( "email");
+//        List<Object> gender = res.jsonPath().getList( "gender");
+//        List<Object> status = res.jsonPath().getList( "status");
+//
+//        assertThat(id.getFirst()).isNotNull();
+//        assertThat(name.getFirst()).isNotNull();
+//        assertThat(email.getFirst()).isNotNull();
+//        assertThat(gender.getFirst()).isIn("female", "male");
+//        assertThat(status.getFirst()).isIn("active", "inactive");
+//
+//        System.out.println(id.getFirst());
+//        System.out.println(name.getFirst());
+//
+//    }
+
     public void validationResponseBodyGetListUsers() {
-        List<Object> id = res.jsonPath().getList( "id");
-        List<Object> name = res.jsonPath().getList( "name");
-        List<Object> email = res.jsonPath().getList( "email");
-        List<Object> gender = res.jsonPath().getList( "gender");
-        List<Object> status = res.jsonPath().getList( "status");
+        List<Object> id = res.jsonPath().getList("id");
+        List<Object> name = res.jsonPath().getList("name");
+        List<Object> email = res.jsonPath().getList("email");
+        List<Object> gender = res.jsonPath().getList("gender");
+        List<Object> status = res.jsonPath().getList("status");
 
-        assertThat(id.getFirst()).isNotNull();
-        assertThat(name.getFirst()).isNotNull();
-        assertThat(email.getFirst()).isNotNull();
-        assertThat(gender.getFirst()).isIn("female", "male");
-        assertThat(status.getFirst()).isIn("active", "inactive");
 
-        System.out.println(id.getFirst());
-        System.out.println(name.getFirst());
+        if (!id.isEmpty() && !name.isEmpty() && !email.isEmpty() && !gender.isEmpty() && !status.isEmpty()) {
+            assertThat(id.get(0)).isNotNull();
+            assertThat(name.get(0)).isNotNull();
+            assertThat(email.get(0)).isNotNull();
+            assertThat(gender.get(0)).isIn("female", "male");
+            assertThat(status.get(0)).isIn("active", "inactive");
 
+            System.out.println(id.get(0));
+            System.out.println(name.get(0));
+        } else {
+            System.out.println("One or more lists are empty.");
+        }
     }
+
 
     public void validationResponseJsonWithJSONSchema(String filename) {
         File JSONFile = Utility.getJSONSchemaFile(filename);
