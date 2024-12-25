@@ -40,6 +40,14 @@ configurations {
     }
 }
 
+sourceSets {
+    test {
+        resources {
+            srcDir 'src/test/java'
+        }
+    }
+}
+
 
 tasks.register('cucumber', JavaExec) {
     dependsOn assemble, testClasses
