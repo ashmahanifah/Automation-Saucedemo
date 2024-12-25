@@ -72,6 +72,7 @@
     "Gradle.Build finalProjectJayJay.executor": "Run",
     "Gradle.finalProjectJayJay [:Main.main()].executor": "Run",
     "Gradle.finalProjectJayJay [:testSelenium.main()].executor": "Run",
+    "Gradle.finalProjectJayJay [test].executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -94,7 +95,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Cucumber Java.Feature: web">
+  <component name="RunManager" selected="Gradle.finalProjectJayJay [test]">
     <configuration name="testSelenium" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="testSelenium" />
       <module name="finalProjectJayJay.test" />
@@ -160,33 +161,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Test delete user" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/feature/api.feature" />
-      <option name="GLUE" value="stepDef" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="finalProjectJayJay.test" />
-      <option name="NAME_FILTER" value="^Test delete user$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Test delete user$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Test delete user" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="finalProjectJayJay [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.finalProjectJayJay [test]" />
         <item itemvalue="Cucumber Java.Feature: web" />
         <item itemvalue="Cucumber Java.Scenario: Logout" />
         <item itemvalue="Application.testSelenium" />
         <item itemvalue="Cucumber Java.Feature: api" />
-        <item itemvalue="Cucumber Java.Scenario: Test delete user" />
       </list>
     </recent_temporary>
   </component>
@@ -223,19 +226,54 @@
       <option name="project" value="LOCAL" />
       <updated>1735148127188</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="rename task name">
+      <option name="closed" value="true" />
+      <created>1735148440941</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1735148440941</updated>
+    </task>
+    <task id="LOCAL-00005" summary="rename task name">
+      <option name="closed" value="true" />
+      <created>1735148476389</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1735148476389</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update code">
+      <option name="closed" value="true" />
+      <created>1735148953417</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1735148953417</updated>
+    </task>
+    <task id="LOCAL-00007" summary="rename runner file and remove tags from cucumber task">
+      <option name="closed" value="true" />
+      <created>1735149520524</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735149520524</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit" />
     <MESSAGE value="Update runner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update runner" />
+    <MESSAGE value="rename task name" />
+    <MESSAGE value="update code" />
+    <MESSAGE value="rename runner file and remove tags from cucumber task" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename runner file and remove tags from cucumber task" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/runner/ApiRunner.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/runner/TestRunner.java</url>
           <line>14</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
