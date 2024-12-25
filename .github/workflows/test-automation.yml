@@ -35,20 +35,21 @@ jobs:
     - name: Run tests with Cucumber
       run: ./gradlew cucumber
 
-    - name: Archive tests result
-      uses: actions/upload-artifact@v3.1.0
+    # Archive Test Result
+    - name: Archive Test Result
+      uses: actions/upload-artifact@v4.4.3
       if: always()
-      with: 
+      with:
         name: Cucumber Report
         path: reports
-
+      
     # Deploy to Github Pages
     - name: Deploy report to Github Pages
       if: always()
-      uses: peaceiris/actions-gh-pages@v3.7.3
+      uses: peaceiris/actions-gh-pages@v4.0.0
       with:
-        PERSONAL_TOKEN: ${{ secrets.GH_TOKEN }}
-        PUBLISH_DIR: reports
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_DIR: reports    
 
   dependency-submission:
     runs-on: ubuntu-latest
