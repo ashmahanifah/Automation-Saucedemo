@@ -37,24 +37,31 @@ src/test/
 │   ├── helper/
 │   │   ├── Endpoint
 │   │   ├── Models
+│   │   ├── PageManager
 │   │   └── Utility
 │   ├── pages/
 │   │   ├── ApiPage
-│   │   └── WebPage
+│   │   ├── P01_LoginPage
+│   │   ├── P02_InventoryPage
+│   │   ├── P03_CheckoutPage
+│   │   └── P04_NavigatePage
 │   ├── runner/
 │   │   └── TestRunner
 │   └── stepDef/
-│       ├── ApiStep
-│       ├── Hooks
-│       └── WebStep
+│   │   ├── ApiStep
+│   │   ├── Hooks
+│   │   ├── S01_LoginStep
+│   │   ├── S02_InventoryStep
+│   │   ├── S03_CheckoutStep
+│   │   └── S04_NavigateStep
 ├── resources/
 │   └── JSONSchemaData/
-│       ├── get_list_users_normal.json
-│       └── post_create_new_user.json
+│   │   ├── get_list_users_normal.json
+│   │   └── post_create_new_user.json
 ├── build.gradle
-└── .github/
-    └── workflows/
-        └── test-automation.yml
+├── .github/
+│   ├── workflows/
+└────────── test-automation.yml
 
 ```
 
@@ -65,12 +72,13 @@ src/test/
     - Endpoint: Stores API endpoint URLs.
     - Models: Contains data models used for API testing.
     - Utility: Provides general-purpose utility functions, such as JSON file handling or configurations.
+    - PageManager: Acts as controller for handling interactions with different pages of the website during UI testing.
 - **pages**: Contains Page Object Model (POM) class for Web UI and API testing.
 - **runner**: Contains configurations for running the tests
 - **stepDef**: Contains Step Definitions for the Gherkin test scenarios.
     - ApiStep: Implements the steps for API testing.
     - Hooks: Contains setup and teardown configurations (e.g., Before and After hooks).
-    - WebStep: Implements the steps for Web UI testing.
+    - WebStep: Implements the steps for Web UI testing. Those Steps are organized into multiple classes based on the specific pages of the website where the actions are performed.
 - **resources**: Contains supporting files for testing, such as test data for JSON schemas.
 - **build.gradle**: Gradle build file that defines tasks for running Cucumber tests.
 - **.github/workflows**: Contains the GitHub Actions workflow configuration.
