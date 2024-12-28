@@ -43,6 +43,44 @@ public class Models {
                 .post(endpoint);
     }
 
+    public static Response postCreateUserInvalidData(String endpoint) {
+        String name = "John Smith";
+        String gender = "test123";
+        String email = generateRandomEmail();
+        String status = "active";
+        JSONObject payload = new JSONObject();
+        payload.put("name", name);
+        payload.put("gender", gender);
+        payload.put("email", email);
+        payload.put("status", status);
+
+        setupHeaders();
+        return request
+                .header("Content-Type", "application/json; charset=UTF-8")
+                .body(payload.toString())
+                .when()
+                .post(endpoint);
+    }
+
+    public static Response postCreateUserInvalidEmail(String endpoint) {
+        String name = "Nami San";
+        String gender = "female";
+        String email = "hihihi";
+        String status = "active";
+        JSONObject payload = new JSONObject();
+        payload.put("name", name);
+        payload.put("gender", gender);
+        payload.put("email", email);
+        payload.put("status", status);
+
+        setupHeaders();
+        return request
+                .header("Content-Type", "application/json; charset=UTF-8")
+                .body(payload.toString())
+                .when()
+                .post(endpoint);
+    }
+
     public static Response deleteUser(String endpoint, String userID) {
         setupHeaders();
         String finalEndpoint = endpoint + "/" + userID;

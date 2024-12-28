@@ -1,11 +1,12 @@
 package stepDef;
 
+import helper.PageManager;
 import io.cucumber.java.*;
 
-import static helper.Utility.quitDriver;
-import static helper.Utility.startDriver;
+import static helper.Utility.*;
 
 public class Hooks {
+
     @BeforeAll
     public static void setUp(){
 

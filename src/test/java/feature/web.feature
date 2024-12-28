@@ -47,7 +47,7 @@ Feature: Test Automation Web
     When user click the "Add to cart" button for a product
     Then the cart icon should display the number "1"
     And the product should appear in the cart
-    When user click the "Remove" button for that product on the inventory page
+    When user click the "Remove" button for a product
     Then the cart icon should display the number "0"
 
   @web
@@ -60,7 +60,7 @@ Feature: Test Automation Web
     When user click the "Add to cart" button for a product
     Then the cart icon should display the number "1"
     When user click the cart icon
-    And user click the "Checkout" button
+    And user click the "Checkout" button on the inventory cart page
     Then user should be redirected to the checkout information page
 
   @web
@@ -73,12 +73,12 @@ Feature: Test Automation Web
     When user click the "Add to cart" button for a product
     Then the cart icon should display the number "1"
     When user click the cart icon
-    And user click the "Checkout" button
+    And user click the "Checkout" button on the inventory cart page
     Then user should be redirected to the checkout information page
     When user enter "John" as the first name
     And user enter "Doe" as the last name
     And user enter "12345" as the postal code
-    And user click the "Continue" button
+    And user click the "Continue" button on the checkout page
     And user click the "Finish" button on the checkout overview page
     Then user should see a confirmation message "THANK YOU FOR YOUR ORDER"
 
@@ -92,7 +92,7 @@ Feature: Test Automation Web
     When user click the "Add to cart" button for a product
     Then the cart icon should display the number "1"
     When user click the cart icon
-    And user click the "Checkout" button
+    And user click the "Checkout" button on the inventory cart page
     Then user should be redirected to the checkout information page
     When user leave the first name field empty
     Then user should see an error message "Error: First Name is required"
