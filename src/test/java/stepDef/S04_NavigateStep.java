@@ -18,7 +18,6 @@ public class S04_NavigateStep {
         this.pageManager = new PageManager(driver);
     }
 
-    //here
     @And("user click the {string} button")
     public void clickNavigationButton(String buttonName) {
         pageManager.clickButton("burger");

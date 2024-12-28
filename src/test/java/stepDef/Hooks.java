@@ -1,6 +1,5 @@
 package stepDef;
 
-import helper.PageManager;
 import io.cucumber.java.*;
 
 import static helper.Utility.*;

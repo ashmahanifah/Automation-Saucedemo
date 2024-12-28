@@ -55,8 +55,6 @@ public class S03_CheckoutStep {
         checkoutPage.enterFirstName("");
     }
 
-    //here
-
     @And("user click the {string} button on the checkout page")
     public void userClickTheButtonOnTheCheckoutPage(String buttonName) {
         pageManager.clickButton("continue");
